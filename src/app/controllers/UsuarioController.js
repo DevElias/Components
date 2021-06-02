@@ -3,11 +3,25 @@ import Usuario from '../models/Usuario';
 
 class UsuarioController {
 
-    async index(req, res){
-        return res.status(200).json({response: true, message:'Listagem de Usuários'});
+    async index(req, res)
+    {
+        if(req.params.id){
+            const aUsuarios = await Usuario.findByPk(req.params.id);
+
+            return res.status(200).json({response: true, data: aUsuarios});
+        }
+        else{
+            const aUsuarios = await Usuario.findAll({
+                where:{},
+                attributes:['id','nome','email'],
+            });
+
+            return res.status(200).json({response: true, data: aUsuarios});
+        }
     }
 
-    async store(req, res) {
+    async store(req, res) 
+    {
         
         const schema = Yup.object().shape({
             nome: Yup.string().required(),
@@ -35,7 +49,8 @@ class UsuarioController {
         });
     }
 
-    async update(req, res){
+    async update(req, res)
+    {
 
         const schema = Yup.object().shape({
             nome: Yup.string(),

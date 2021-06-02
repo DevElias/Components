@@ -13,7 +13,7 @@ routes.get('/', (req, res) => {
 });
 
 /* Usuários */
-routes.get('/usuario', UsuarioController.index);
+routes.get(['/usuario','/usuario/:id'], UsuarioController.index);
 routes.post('/usuario', UsuarioController.store); 
 routes.post('/sessions', SessionController.store);
 routes.put('/usuario', authMiddleware, UsuarioController.update);
