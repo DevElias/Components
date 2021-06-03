@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import SelectBox from './components/Selectbox';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
+import { Routes } from './routes';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Switch>
-      <Route path="/" component={App} exact/>
-      <Route path="/selectbox" component={SelectBox} exact/>
-    </Switch>
+    < Routes />
   </BrowserRouter>,
   document.getElementById('root')
 );
