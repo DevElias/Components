@@ -1,0 +1,16 @@
+.selectBox{
+    display:flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+input, input:focus-visible{
+    border: none;
+    outline: none;
+}
+
+.group-button svg{
+    margin: 0.2rem;
+}
