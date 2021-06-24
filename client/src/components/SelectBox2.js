@@ -30,20 +30,22 @@ function SelectBox({rota}) {
     }
 
     return (
-        <div className="selectBox">
-            <div className={visible}>
-            <div id="select-loading" className="loader-bubble loader-bubble-primary m-5"></div>
+        <div className="col-md-3 form-group mb-3">
+            <div className="selectBox">
+                <div className={visible}>
+                <div id="select-loading" className="loader-bubble loader-bubble-primary m-5"></div>
+                </div>
+                <select className="form-control" name="options" id="valores" onClick={() => simpleSearch(rota)}>
+                    {data.map(item => <option key={item.id} value={item.id}>{item.nome}</option>)}
+                </select>
+                <div className="group-button">
+                    <FontAwesomeIcon icon={faSearch} id="simple-search"  onClick={() => simpleSearch(rota)}/>
+                    <FontAwesomeIcon icon={faSearchPlus} id="custom-search" onClick={() => simpleSearch()}/>
+                    <FontAwesomeIcon icon={faEraser} id="erase" onClick={() => clearComponent()}/>
+                    <FontAwesomeIcon icon={faPlus} id="insert" onClick={() => openWindow()}/>
+                </div>
             </div>
-            <select name="options" id="valores">
-                {data.map(item => <option key={item.id} value={item.id}>{item.nome}</option>)}
-            </select>
-            <div className="group-button">
-                <FontAwesomeIcon icon={faSearch} id="simple-search"  onClick={() => simpleSearch(rota)}/>
-                <FontAwesomeIcon icon={faSearchPlus} id="custom-search" onClick={() => simpleSearch()}/>
-                <FontAwesomeIcon icon={faEraser} id="erase" onClick={() => clearComponent()}/>
-                <FontAwesomeIcon icon={faPlus} id="insert" onClick={() => openWindow()}/>
-            </div>
-        </div>
+        </div> 
     );
   }
 
