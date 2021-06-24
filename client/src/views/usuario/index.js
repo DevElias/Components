@@ -21,7 +21,7 @@ class Usuario extends React.Component{
     return (
       <>
         <ul>{ this.state.usuario.map(usuario => <li>{usuario.nome}</li>)}</ul>
-        <SelectBox2/>
+        <SelectBox2 rota="/usuario"/>
       </>
     )
   }

@@ -14,3 +14,11 @@ input, input:focus-visible{
 .group-button svg{
     margin: 0.2rem;
 }
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}

@@ -23959,7 +23959,6 @@ div.tab-border {
     padding: 80px 15px; } }
 
 .not-found-wrap {
-  background-image: url("../../dist-assets/images/page-bg-bottom.png");
   background-position-y: bottom;
   background-size: cover;
   background-size: 100%;
@@ -25250,7 +25249,7 @@ p.ul-widget7__big-dot {
   margin-left: 20px; }
 
 .ul-widget-card__img-bg {
-  background: url("../../../../images/products/watch-2.jpg");
+  background: url("../../images/products/watch-2.jpg");
   background-size: cover;
   height: 500px;
   background-repeat: no-repeat, repeat; }
