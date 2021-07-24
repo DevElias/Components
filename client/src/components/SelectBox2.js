@@ -6,7 +6,7 @@ import "../css/selectBox2.css";
 import "../dist-assets/css/themes/lite-purple.css";
 import "../dist-assets/css/plugins/perfect-scrollbar.css";
 
-function SelectBox({rota}) {
+function SelectBox({rota, chave, valor}) {
 
     const [data, setData] = useState([]); 
     const [visible, setVisibility] = useState('hide');
@@ -36,7 +36,7 @@ function SelectBox({rota}) {
                 <div id="select-loading" className="loader-bubble loader-bubble-primary m-5"></div>
                 </div>
                 <select className="form-control" name="options" id="valores" onClick={() => simpleSearch(rota)}>
-                    {data.map(item => <option key={item.id} value={item.id}>{item.nome}</option>)}
+                    {data.map(item => <option key={String(item.id)} value={item[chave]}>{item[valor]}</option>)}
                 </select>
                 <div className="group-button">
                     <FontAwesomeIcon icon={faSearch} id="simple-search"  onClick={() => simpleSearch(rota)}/>

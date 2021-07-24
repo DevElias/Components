@@ -20,8 +20,8 @@ class Usuario extends React.Component{
   {
     return (
       <>
-        <ul>{ this.state.usuario.map(usuario => <li>{usuario.nome}</li>)}</ul>
-        <SelectBox2 rota="/usuario"/>
+        <ul>{ this.state.usuario.map(usuario => <li key={usuario.id}>{usuario.nome}</li>)}</ul>
+        <SelectBox2 rota="/usuario" chave="id" valor="nome"/>
       </>
     )
   }
